@@ -4,3 +4,6 @@ node_modules/
 # Dotfiles
 .*
 !.gitignore
+!.prettierrc.json
+!.prettierignore
+!.env.example
