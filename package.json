@@ -2,9 +2,22 @@
   "name": "service-app",
   "version": "1.0.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint ."
+  },
   "packageManager": "pnpm@10.17.1",
   "devDependencies": {
-    "turbo": "^2.5.8"
+    "@bastidood/eslint-plugin-imsort": "^0.10.1",
+    "@eslint/js": "^9.36.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-expo": "^1.0.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^6.1.0",
+    "eslint-plugin-turbo": "^2.5.8",
+    "globals": "^16.4.0",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.45.0"
   }
 }
