@@ -1,13 +1,13 @@
-import js from "@eslint/js";
-import ts from "typescript-eslint";
-import prettier from "eslint-config-prettier";
 import expo from 'eslint-plugin-expo';
 import globals from 'globals';
+import imsort from '@bastidood/eslint-plugin-imsort';
+import js from "@eslint/js";
+import prettier from "eslint-config-prettier";
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import imsort from '@bastidood/eslint-plugin-imsort';
+import ts from "typescript-eslint";
 import turbo from "eslint-plugin-turbo";
-import { defineConfig } from 'eslint/config'
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   { ignores: ['node_modules/**/*', 'build/**/*', 'dist/**/*'] },
