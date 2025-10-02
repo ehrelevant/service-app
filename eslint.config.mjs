@@ -22,6 +22,9 @@ export default defineConfig([
       prettier,
     ],
     plugins: { '@bastidood/imsort': imsort },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
   },
   {
     files: ['**/*.jsx', '**/*.tsx'],
