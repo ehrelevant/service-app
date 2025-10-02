@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "turbo run dev",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "fmt": "prettier --experimental-cli --check .",
