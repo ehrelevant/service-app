@@ -1,26 +1,20 @@
 import expo from 'eslint-plugin-expo';
 import globals from 'globals';
 import imsort from '@bastidood/eslint-plugin-imsort';
-import js from "@eslint/js";
-import prettier from "eslint-config-prettier";
+import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import ts from "typescript-eslint";
-import turbo from "eslint-plugin-turbo";
+import ts from 'typescript-eslint';
+import turbo from 'eslint-plugin-turbo';
 import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
-  { ignores: ['node_modules/**/*', 'build/**/*', 'dist/**/*'] },
-  { languageOptions: { globals: { ...globals.node }  }},
+  { ignores: ['**/node_modules/**/*', '**/build/**/*', '**/dist/**/*'] },
+  { languageOptions: { globals: { ...globals.node } } },
   {
     files: ['**/*.{js,jsx,cjs,mjs,ts,tsx}'],
-    extends: [
-      js.configs.recommended,
-      ...ts.configs.recommended,
-      ...ts.configs.stylistic,
-      imsort.configs.all,
-      prettier,
-    ],
+    extends: [js.configs.recommended, ...ts.configs.recommended, ...ts.configs.stylistic, imsort.configs.all, prettier],
     plugins: { '@bastidood/imsort': imsort },
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
@@ -31,14 +25,14 @@ export default defineConfig([
     plugins: {
       expo,
       react,
-      'react-hooks': reactHooks
+      'react-hooks': reactHooks,
     },
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
-        }
-      }
+          jsx: true,
+        },
+      },
     },
     rules: {
       ...react.configs.recommended.rules,
@@ -53,15 +47,15 @@ export default defineConfig([
     settings: {
       react: {
         version: 'detect',
-      }
-    }
+      },
+    },
   },
   {
     plugins: {
       turbo,
     },
     rules: {
-      "turbo/no-undeclared-env-vars": "warn",
+      'turbo/no-undeclared-env-vars': 'warn',
     },
-  }
+  },
 ]);
