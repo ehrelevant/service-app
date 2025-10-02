@@ -2,7 +2,9 @@
   "name": "service-app",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-  },
-  "packageManager": "pnpm@10.17.1"
+  "scripts": {},
+  "packageManager": "pnpm@10.17.1",
+  "devDependencies": {
+    "turbo": "^2.5.8"
+  }
 }
