@@ -1,0 +1,28 @@
+name: Code Quality Checks
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: main
+
+jobs:
+  check:
+    name: Run Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Check Formatting
+        run: pnpm fmt
+      - name: Check Linting
+        run: pnpm lint
