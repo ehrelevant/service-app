@@ -11,9 +11,8 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-native",
-    "types": ["nativewind/types"],
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["src", "nativewind.d.ts"]
+  "include": ["src"]
 }
