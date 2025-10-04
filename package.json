@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
+    "dev:android": "turbo run dev:android",
+    "dev:ios": "turbo run dev:ios",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "fmt": "prettier --experimental-cli --check .",

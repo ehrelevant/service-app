@@ -3,7 +3,18 @@
   "tasks": {
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "dependsOn": ["^dev"]
+    },
+    "dev:android": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^dev:android"]
+    },
+    "dev:ios": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^dev:ios"]
     }
   }
 }
