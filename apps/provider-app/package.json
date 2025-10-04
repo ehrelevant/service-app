@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "expo": "~54.0.10",
+    "expo-dev-client": "~6.0.13",
     "expo-status-bar": "~3.0.8",
     "nativewind": "^4.2.1",
     "react": "19.1.0",
