@@ -21,6 +21,12 @@ This project is a monorepo containing several apps. The development servers of a
 # - http://<host>:3100 - Provider App
 # - http://<host>:3200 - Seeker App
 pnpm dev
+
+# Starts a android development build for all apps
+pnpm dev:android
+
+# Starts a ios development build for all apps
+pnpm dev:ios
 ```
 
 ### Linting & Formatting
