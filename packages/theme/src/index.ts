@@ -47,4 +47,9 @@ export const theme = {
     lg: 16,
     round: 9999,
   },
+  elevation: {
+    low: 1,
+    medium: 3,
+    high: 6,
+  },
 };
