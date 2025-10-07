@@ -18,6 +18,7 @@ export default defineConfig([
     plugins: { '@bastidood/imsort': imsort },
     rules: {
       '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/consistent-type-definitions': 'off',
     },
   },
   {
