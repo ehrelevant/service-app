@@ -1,7 +1,12 @@
 services:
   db:
-    image: 'postgres:18.0'
+    image: 'postgis/postgis:18-3.6'
+    user: ${POSTGRES_USER:-postgres}
     restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      POSTGRES_DATABASE: ${POSTGRES_USER:-postgres}
     ports:
       - 5432:5432
     volumes:
