@@ -4,7 +4,7 @@ import { sql } from 'drizzle-orm';
 export const app = pgSchema('app');
 
 export const user = app.table(
-  'users',
+  'user',
   {
     id: uuid().primaryKey().notNull().defaultRandom(),
     email: text().unique().notNull(),
@@ -31,7 +31,7 @@ export const user = app.table(
 export type User = typeof user.$inferSelect;
 export type NewUser = typeof user.$inferInsert;
 
-export const role = app.table('roles', {
+export const role = app.table('role', {
   id: uuid().primaryKey().notNull().defaultRandom(),
   name: text().notNull().unique(),
 });
@@ -39,7 +39,7 @@ export type Role = typeof role.$inferSelect;
 export type NewRole = typeof role.$inferInsert;
 
 export const userRole = app.table(
-  'user_roles',
+  'user_role',
   {
     userId: uuid()
       .notNull()
