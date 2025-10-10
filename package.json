@@ -10,9 +10,9 @@
     "lint:fix": "eslint . --fix",
     "fmt": "prettier --experimental-cli --check .",
     "fmt:fix": "prettier --experimental-cli --write .",
-    "db:generate": "pnpm --filter @repo/database db:generate",
-    "db:migrate": "pnpm --filter @repo/database db:migrate",
-    "db:studio": "pnpm --filter @repo/database db:studio"
+    "db:generate": "pnpm --filter @repo/database generate",
+    "db:migrate": "pnpm --filter @repo/database migrate",
+    "db:studio": "pnpm --filter @repo/database studio"
   },
   "packageManager": "pnpm@10.17.1",
   "devDependencies": {
