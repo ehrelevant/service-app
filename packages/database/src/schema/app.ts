@@ -11,17 +11,15 @@ export const user = app.table(
     firstName: text().notNull().default(''),
     middleName: text().notNull().default(''),
     lastName: text().notNull().default(''),
-    password: text().notNull(),
     phoneNumber: text().unique().notNull(),
     birthDate: date({ mode: 'date' }).notNull(),
-    avatarUrl: text(),
-    isVerified: boolean().notNull().default(false),
+    image: text(),
+    emailVerified: boolean().notNull().default(false),
     createdAt: timestamp({ mode: 'date', withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp({ mode: 'date', withTimezone: true })
       .notNull()
       .defaultNow()
       .$onUpdate(() => new Date()),
-    deletedAt: timestamp({ mode: 'date', withTimezone: true }),
   },
   ({ email, phoneNumber }) => [
     check('user_email_non_empty', sql`${email} <> ''`),
