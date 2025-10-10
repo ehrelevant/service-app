@@ -1,6 +1,10 @@
 # Dependencies
 node_modules/
 
+# Build folders
+build/
+dist/
+
 # Dotfiles
 .*
 !.gitignore
