@@ -12,7 +12,6 @@ export const user = app.table(
     middleName: text('middle_name').notNull().default(''),
     lastName: text('last_name').notNull().default(''),
     phoneNumber: text('phone_number').unique().notNull(),
-    birthDate: timestamp('birth_date', { withTimezone: true }).notNull().defaultNow(),
     image: text('image'),
     emailVerified: boolean('email_verified').notNull().default(false),
     createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),

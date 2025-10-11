@@ -50,6 +50,13 @@
       "when": 1760188533599,
       "tag": "0006_add_account_provider_id",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1760190213865,
+      "tag": "0007_remove_user_birthdate",
+      "breakpoints": true
     }
   ]
 }
