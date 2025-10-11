@@ -29,6 +29,13 @@
       "when": 1760095608949,
       "tag": "0003_configure_better_auth_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1760176408461,
+      "tag": "0004_use_snake_case_for_tables",
+      "breakpoints": true
     }
   ]
 }
