@@ -1,10 +1,10 @@
 import 'dotenv/config';
-import { betterAuth } from "better-auth";
-import { expo } from "@better-auth/expo";
-import { Pool } from "pg";
 import * as schema from '@repo/database';
-import { drizzle } from "drizzle-orm/node-postgres";
-import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { betterAuth } from 'better-auth';
+import { drizzle } from 'drizzle-orm/node-postgres';
+import { drizzleAdapter } from 'better-auth/adapters/drizzle';
+import { expo } from '@better-auth/expo';
+import { Pool } from 'pg';
 
 const connectionString = process.env.DATABASE_URL as string;
 const pool = new Pool({ connectionString });
@@ -16,37 +16,35 @@ export const auth = betterAuth({
     debugLogs: true,
   }),
   plugins: [expo()],
-  trustedOrigins: [
-    'provider-app://'
-  ],
+  trustedOrigins: ['provider-app://'],
   emailAndPassword: {
     enabled: true,
   },
   user: {
     fields: {
-      name: 'firstName'
+      name: 'firstName',
     },
     additionalFields: {
       phoneNumber: {
         type: 'string',
         required: true,
-        input: true
+        input: true,
       },
       middleName: {
         type: 'string',
         required: false,
-        input: true
+        input: true,
       },
       lastName: {
         type: 'string',
         required: true,
-        input: true
+        input: true,
       },
-    }
+    },
   },
   advanced: {
     database: {
       generateId: false,
-    }
-  }
+    },
+  },
 });

@@ -10,7 +10,7 @@ async function bootstrap() {
   });
 
   // TODO: Add CORS policy for production mode
-  app.enableCors()
+  app.enableCors();
 
   const config = new DocumentBuilder().build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
