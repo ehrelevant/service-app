@@ -57,6 +57,13 @@
       "when": 1760190213865,
       "tag": "0007_remove_user_birthdate",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1760191861217,
+      "tag": "0008_add_account_id_token",
+      "breakpoints": true
     }
   ]
 }
