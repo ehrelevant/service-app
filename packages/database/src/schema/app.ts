@@ -1,4 +1,4 @@
-import { boolean, check, date, pgSchema, primaryKey, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { boolean, check, pgSchema, primaryKey, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
 
 export const app = pgSchema('app');
@@ -12,11 +12,11 @@ export const user = app.table(
     middleName: text('middle_name').notNull().default(''),
     lastName: text('last_name').notNull().default(''),
     phoneNumber: text('phone_number').unique().notNull(),
-    birthDate: date('birth_date', { mode: 'date' }).notNull(),
+    birthDate: timestamp('birth_date', { withTimezone: true }).notNull().defaultNow(),
     image: text('image'),
     emailVerified: boolean('email_verified').notNull().default(false),
-    createdAt: timestamp('created_at', { mode: 'date', withTimezone: true }).notNull().defaultNow(),
-    updatedAt: timestamp('updated_at', { mode: 'date', withTimezone: true })
+    createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp('updated_at', { withTimezone: true })
       .notNull()
       .defaultNow()
       .$onUpdate(() => new Date()),
@@ -45,7 +45,7 @@ export const userRole = app.table(
     roleId: uuid('role_id')
       .notNull()
       .references(() => role.id, { onUpdate: 'cascade' }),
-    assigned_at: timestamp('assigned_at', { mode: 'date', withTimezone: true }).defaultNow(),
+    assigned_at: timestamp('assigned_at', { withTimezone: true }).defaultNow(),
   },
   ({ userId, roleId }) => [primaryKey({ columns: [userId, roleId] })],
 );

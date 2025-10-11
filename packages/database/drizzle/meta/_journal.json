@@ -36,6 +36,13 @@
       "when": 1760176408461,
       "tag": "0004_use_snake_case_for_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1760187863843,
+      "tag": "0005_enforce_default_birthdate",
+      "breakpoints": true
     }
   ]
 }
