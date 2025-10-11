@@ -24,6 +24,7 @@ export const account = auth.table('account', {
   userId: uuid('user_id')
     .notNull()
     .references(() => user.id, { onUpdate: 'cascade', onDelete: 'cascade' }),
+  providerId: text("provider_id").notNull(),
   accountId: text('account_id').notNull(),
   accessToken: text('access_token'),
   refreshToken: text('refresh_token'),

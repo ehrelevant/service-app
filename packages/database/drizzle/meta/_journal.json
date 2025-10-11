@@ -43,6 +43,13 @@
       "when": 1760187863843,
       "tag": "0005_enforce_default_birthdate",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1760188533599,
+      "tag": "0006_add_account_provider_id",
+      "breakpoints": true
     }
   ]
 }
