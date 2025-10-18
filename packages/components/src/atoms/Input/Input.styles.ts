@@ -1,6 +1,5 @@
+import { colors, fontFamily, fontSize, fontWeight, radius, spacing } from '@repo/theme';
 import { StyleSheet } from 'react-native';
-
-import { colors, fontFamily, fontSize, fontWeight, radius, spacing } from '../../theme';
 
 export function createStyles(error?: string, isFocused?: boolean) {
   return StyleSheet.create({

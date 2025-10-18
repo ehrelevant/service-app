@@ -1,7 +1,5 @@
-import React from 'react';
+import { colors, fontFamily, fontSize, fontWeight, lineHeight } from '@repo/theme';
 import { StyleSheet, Text, TextProps, TextStyle } from 'react-native';
-
-import { colors, fontFamily, fontSize, fontWeight, lineHeight } from '../../theme';
 
 type VariantType =
   | 'h1'

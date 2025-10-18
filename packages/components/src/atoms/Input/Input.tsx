@@ -1,7 +1,6 @@
+import { colors } from '@repo/theme';
 import { ReactNode, useState } from 'react';
 import { StyleProp, Text, TextInput, TextInputProps, TouchableOpacity, View, ViewStyle } from 'react-native';
-
-import { colors } from '../../theme';
 
 import { createStyles } from './Input.styles';
 

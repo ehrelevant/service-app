@@ -1,6 +1,5 @@
+import { colors, fontFamily, fontSize, fontWeight, radius, spacing } from '@repo/theme';
 import { FlexStyle, StyleSheet } from 'react-native';
-
-import { colors, fontFamily, fontSize, fontWeight, radius, spacing } from '../../theme';
 
 export function createStyles(
   variant: 'primary' | 'secondary' | 'outline' | 'text',

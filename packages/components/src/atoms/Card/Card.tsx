@@ -1,6 +1,5 @@
+import { colors, radius, shadows, spacing } from '@repo/theme';
 import { StyleSheet, View, ViewProps } from 'react-native';
-
-import { colors, radius, shadows, spacing } from '../../theme';
 
 export interface CardProps extends ViewProps {
   elevation?: 'none' | 'xs' | 's' | 'm' | 'l';
