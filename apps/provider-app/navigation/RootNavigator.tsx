@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { AuthStack } from './AuthStack';
 import { MainStack } from './HomeStack';
 
-export const RootNavigator = () => {
+export function RootNavigator() {
   const { isAuthenticated } = useAuth();
 
   return <NavigationContainer>{isAuthenticated ? <MainStack /> : <AuthStack />}</NavigationContainer>;

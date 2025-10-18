@@ -8,7 +8,7 @@ import { useAuth } from '../context/AuthContext';
 
 type HomeNavProp = NativeStackNavigationProp<MainStackParamList, 'Home'>;
 
-export const HomeScreen = () => {
+export function HomeScreen() {
   const { logout } = useAuth();
   const navigation = useNavigation<HomeNavProp>();
 

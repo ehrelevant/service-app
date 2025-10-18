@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export const ProfileScreen = () => {
+export function ProfileScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>User </Text>

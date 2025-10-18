@@ -10,7 +10,7 @@ import { useAuth } from '../context/AuthContext';
 
 type SignInNavProp = NativeStackNavigationProp<AuthStackParamList, 'SignIn'>;
 
-export const SignInScreen = () => {
+export function SignInScreen() {
   const navigation = useNavigation<SignInNavProp>();
   const { login } = useAuth();
 

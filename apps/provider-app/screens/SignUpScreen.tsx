@@ -10,7 +10,7 @@ import { useAuth } from '../context/AuthContext';
 
 type SignUpNavProp = NativeStackNavigationProp<AuthStackParamList, 'SignUp'>;
 
-export const SignUpScreen = () => {
+export function SignUpScreen() {
   const navigation = useNavigation<SignUpNavProp>();
   const { login } = useAuth();
 
