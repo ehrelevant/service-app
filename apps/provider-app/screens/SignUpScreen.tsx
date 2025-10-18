@@ -6,7 +6,7 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 
-import { authClient } from '../auth-client';
+import { authClient } from '../authClient';
 import { AuthStackParamList } from '../navigation/AuthStack';
 
 type SignUpNavProp = NativeStackNavigationProp<AuthStackParamList, 'SignUp'>;
