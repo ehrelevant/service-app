@@ -53,11 +53,11 @@ export const SignUpScreen = () => {
       <Input placeholder="Email" value={email} onChangeText={setEmail} />
       <Input placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
       <Input placeholder="Phone Number" value={phoneNumber} onChangeText={setPhoneNumber} />
-      <Button title="Create Account" onPress={handleSignUp} />
+      <Button title="Sign Up" onPress={handleSignUp} />
 
       <Pressable onPress={() => navigation.replace('SignIn')}>
         <Text>
-          Already have an account? <Text style={{ textDecorationLine: 'underline' }}>Login</Text>
+          Already have an account? <Text style={{ textDecorationLine: 'underline' }}>Sign In</Text>
         </Text>
       </Pressable>
     </View>

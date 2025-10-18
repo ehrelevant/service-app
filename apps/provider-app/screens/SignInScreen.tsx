@@ -49,7 +49,7 @@ export const SignInScreen = () => {
 
       <Pressable onPress={() => navigation.replace('SignUp')}>
         <Text>
-          Don&apos;t have an account? <Text style={{ textDecorationLine: 'underline' }}>Register</Text>
+          Don&apos;t have an account? <Text style={{ textDecorationLine: 'underline' }}>Sign Up</Text>
         </Text>
       </Pressable>
     </View>
