@@ -36,22 +36,18 @@ export function Input({
         <TextInput
           style={[styles.input, style]}
           placeholderTextColor={colors.textDisabled}
-          onFocus={(e) => {
+          onFocus={e => {
             setIsFocused(true);
             rest.onFocus?.(e);
           }}
-          onBlur={(e) => {
+          onBlur={e => {
             setIsFocused(false);
             rest.onBlur?.(e);
           }}
           {...rest}
         />
         {rightIcon && (
-          <TouchableOpacity
-            style={styles.rightIcon}
-            onPress={onIconPress}
-            disabled={!onIconPress}
-          >
+          <TouchableOpacity style={styles.rightIcon} onPress={onIconPress} disabled={!onIconPress}>
             {rightIcon}
           </TouchableOpacity>
         )}
@@ -63,4 +59,4 @@ export function Input({
       ) : null}
     </View>
   );
-};
+}

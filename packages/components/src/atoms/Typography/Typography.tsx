@@ -109,7 +109,7 @@ function getVariantStyles(variant: VariantType) {
   };
 
   return styles[variant];
-};
+}
 
 export function Typography({
   variant = 'body1',
@@ -134,4 +134,4 @@ export function Typography({
       {children}
     </Text>
   );
-};
+}

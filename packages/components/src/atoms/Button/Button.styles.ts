@@ -104,4 +104,4 @@ export function createStyles(
       marginRight: spacing.xs,
     },
   });
-};
+}

@@ -42,19 +42,14 @@ export function Button({
       <>
         {leftIcon && <View style={styles.icon}>{leftIcon}</View>}
         <Text style={styles.text}>{title}</Text>
-        {rightIcon && <View style={{marginLeft: 8}}>{rightIcon}</View>}
+        {rightIcon && <View style={{ marginLeft: 8 }}>{rightIcon}</View>}
       </>
     );
   };
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.8}
-      disabled={isDisabled}
-      style={[styles.button, style]}
-      {...rest}
-    >
+    <TouchableOpacity activeOpacity={0.8} disabled={isDisabled} style={[styles.button, style]} {...rest}>
       {renderContent()}
     </TouchableOpacity>
   );
-};
+}

@@ -6,13 +6,7 @@ export interface CardProps extends ViewProps {
   padding?: 'none' | 'xs' | 's' | 'm' | 'l' | 'xl';
 }
 
-export function Card({
-  children,
-  elevation = 's',
-  padding = 'm',
-  style,
-  ...rest
-}: CardProps) {
+export function Card({ children, elevation = 's', padding = 'm', style, ...rest }: CardProps) {
   const paddingValues = {
     none: 0,
     xs: spacing.xs,
@@ -23,19 +17,11 @@ export function Card({
   };
 
   return (
-    <View
-      style={[
-        styles.container,
-        shadows[elevation],
-        { padding: paddingValues[padding] },
-        style,
-      ]}
-      {...rest}
-    >
+    <View style={[styles.container, shadows[elevation], { padding: paddingValues[padding] }, style]} {...rest}>
       {children}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
