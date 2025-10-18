@@ -6,13 +6,11 @@ import { useState } from 'react';
 
 import { authClient } from '../auth-client';
 import { AuthStackParamList } from '../navigation/AuthStack';
-import { useAuth } from '../context/AuthContext';
 
 type SignInNavProp = NativeStackNavigationProp<AuthStackParamList, 'SignIn'>;
 
 export function SignInScreen() {
   const navigation = useNavigation<SignInNavProp>();
-  const { login } = useAuth();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -31,7 +29,6 @@ export function SignInScreen() {
         async onSuccess(ctx) {
           console.log('Success!');
           console.log(ctx);
-          await login();
         },
         async onError(ctx) {
           console.log('Error!');

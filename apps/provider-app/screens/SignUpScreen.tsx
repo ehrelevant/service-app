@@ -6,13 +6,11 @@ import { useState } from 'react';
 
 import { authClient } from '../auth-client';
 import { AuthStackParamList } from '../navigation/AuthStack';
-import { useAuth } from '../context/AuthContext';
 
 type SignUpNavProp = NativeStackNavigationProp<AuthStackParamList, 'SignUp'>;
 
 export function SignUpScreen() {
   const navigation = useNavigation<SignUpNavProp>();
-  const { login } = useAuth();
 
   const [firstName, setFirstName] = useState('');
   const [middleName, setMiddleName] = useState('');
@@ -35,7 +33,6 @@ export function SignUpScreen() {
         async onSuccess(ctx) {
           console.log('Success!');
           console.log(ctx);
-          await login();
         },
         async onError(ctx) {
           console.log('Error!');

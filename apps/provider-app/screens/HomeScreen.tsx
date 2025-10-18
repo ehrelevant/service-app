@@ -3,14 +3,17 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import { authClient } from '../auth-client';
 import type { MainStackParamList } from '../navigation/HomeStack';
-import { useAuth } from '../context/AuthContext';
 
 type HomeNavProp = NativeStackNavigationProp<MainStackParamList, 'Home'>;
 
 export function HomeScreen() {
-  const { logout } = useAuth();
   const navigation = useNavigation<HomeNavProp>();
+
+  const handleSignOut = async () => {
+    await authClient.signOut();
+  }
 
   return (
     <View style={styles.container}>
@@ -22,7 +25,7 @@ export function HomeScreen() {
           navigation.navigate('Profile');
         }}
       />
-      <Button title="Logout" onPress={logout} />
+      <Button title="Sign Out" onPress={handleSignOut} />
     </View>
   );
 };

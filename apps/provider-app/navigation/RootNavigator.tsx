@@ -1,12 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
 
-import { useAuth } from '../context/AuthContext';
+import { authClient } from '../auth-client';
 
 import { AuthStack } from './AuthStack';
 import { MainStack } from './HomeStack';
 
 export function RootNavigator() {
-  const { isAuthenticated } = useAuth();
+  const { data: session } = authClient.useSession();
 
-  return <NavigationContainer>{isAuthenticated ? <MainStack /> : <AuthStack />}</NavigationContainer>;
+  return <NavigationContainer>{session === null ? <AuthStack /> : <MainStack />}</NavigationContainer>;
 };
