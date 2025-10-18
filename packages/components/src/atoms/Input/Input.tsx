@@ -15,7 +15,7 @@ export interface InputProps extends TextInputProps {
   onIconPress?: () => void;
 }
 
-export const Input = ({
+export function Input({
   label,
   error,
   helperText,
@@ -25,7 +25,7 @@ export const Input = ({
   onIconPress,
   style,
   ...rest
-}: InputProps) => {
+}: InputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const styles = createStyles(error, isFocused);
 
@@ -65,5 +65,3 @@ export const Input = ({
     </View>
   );
 };
-
-export default Input;

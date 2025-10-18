@@ -1,4 +1,3 @@
-import React from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 
 import { colors, radius, shadows, spacing } from '../../theme';
@@ -8,13 +7,13 @@ export interface CardProps extends ViewProps {
   padding?: 'none' | 'xs' | 's' | 'm' | 'l' | 'xl';
 }
 
-export const Card = ({
+export function Card({
   children,
   elevation = 's',
   padding = 'm',
   style,
   ...rest
-}: CardProps) => {
+}: CardProps) {
   const paddingValues = {
     none: 0,
     xs: spacing.xs,
@@ -46,5 +45,3 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 });
-
-export default Card;

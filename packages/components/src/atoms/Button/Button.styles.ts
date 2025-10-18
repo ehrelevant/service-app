@@ -2,11 +2,11 @@ import { FlexStyle, StyleSheet } from 'react-native';
 
 import { colors, fontFamily, fontSize, fontWeight, radius, spacing } from '../../theme';
 
-export const createStyles = (
+export function createStyles(
   variant: 'primary' | 'secondary' | 'outline' | 'text',
   size: 'small' | 'medium' | 'large',
   isDisabled: boolean,
-) => {
+) {
   // Base styles
   const baseButtonStyles = {
     borderRadius: radius.m,

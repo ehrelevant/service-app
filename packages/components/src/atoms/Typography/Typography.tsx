@@ -25,32 +25,7 @@ export interface TypographyProps extends TextProps {
   weight?: 'regular' | 'medium' | 'semiBold' | 'bold';
 }
 
-export const Typography = ({
-  variant = 'body1',
-  color,
-  align = 'left',
-  weight,
-  style,
-  children,
-  ...rest
-}: TypographyProps) => {
-  const styles = StyleSheet.create({
-    text: {
-      ...getVariantStyles(variant),
-      color: color || colors.textPrimary,
-      textAlign: align,
-      ...(weight && { fontWeight: fontWeight[weight] }),
-    },
-  });
-
-  return (
-    <Text style={[styles.text, style]} {...rest}>
-      {children}
-    </Text>
-  );
-};
-
-const getVariantStyles = (variant: VariantType) => {
+function getVariantStyles(variant: VariantType) {
   const styles = {
     h1: {
       fontSize: fontSize.xxxl,
@@ -138,4 +113,27 @@ const getVariantStyles = (variant: VariantType) => {
   return styles[variant];
 };
 
-export default Typography;
+export function Typography({
+  variant = 'body1',
+  color,
+  align = 'left',
+  weight,
+  style,
+  children,
+  ...rest
+}: TypographyProps) {
+  const styles = StyleSheet.create({
+    text: {
+      ...getVariantStyles(variant),
+      color: color || colors.textPrimary,
+      textAlign: align,
+      ...(weight && { fontWeight: fontWeight[weight] }),
+    },
+  });
+
+  return (
+    <Text style={[styles.text, style]} {...rest}>
+      {children}
+    </Text>
+  );
+};

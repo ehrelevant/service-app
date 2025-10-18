@@ -15,7 +15,7 @@ export interface ButtonProps extends TouchableOpacityProps {
   rightIcon?: ReactNode;
 }
 
-export const Button = ({
+export function Button({
   title,
   variant = 'primary',
   size = 'medium',
@@ -25,7 +25,7 @@ export const Button = ({
   rightIcon,
   style,
   ...rest
-}: ButtonProps) => {
+}: ButtonProps) {
   const isDisabled = disabled || isLoading;
   const styles = createStyles(variant, size, isDisabled);
 
@@ -59,5 +59,3 @@ export const Button = ({
     </TouchableOpacity>
   );
 };
-
-export default Button;
