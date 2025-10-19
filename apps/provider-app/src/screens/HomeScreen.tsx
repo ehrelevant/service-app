@@ -1,11 +1,11 @@
 import { authClient } from '@lib/authClient';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { Button } from '@repo/components';
-import type { HomeStackParamList } from '@navigation/HomeStack';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { DashboardTabsParamList } from '@navigation/DashboardTabs';
 import { StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-type HomeNavProp = NativeStackNavigationProp<HomeStackParamList, 'Home'>;
+type HomeNavProp = BottomTabNavigationProp<DashboardTabsParamList, 'Home'>;
 
 export function HomeScreen() {
   const navigation = useNavigation<HomeNavProp>();
