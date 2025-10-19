@@ -61,12 +61,12 @@ export function SignUpScreen() {
   } else {
     return (
       <View style={styles.container}>
-        <Input placeholder="First Name" autoComplete="name-given" value={firstName} onChangeText={setFirstName} />
-        <Input placeholder="Middle Name" autoComplete="name-middle" value={middleName} onChangeText={setMiddleName} />
-        <Input placeholder="Last Name" autoComplete="name-family" value={lastName} onChangeText={setLastName} />
-        <Input placeholder="Email" autoComplete="email" value={email} onChangeText={setEmail} />
-        <Input placeholder="Password" autoComplete="new-password" value={password} onChangeText={setPassword} secureTextEntry />
-        <Input placeholder="Phone Number" value={phoneNumber} onChangeText={setPhoneNumber} />
+        <Input label="First Name*" placeholder="First Name" autoComplete="name-given" value={firstName} onChangeText={setFirstName} />
+        <Input label="Middle Name" placeholder="Middle Name" autoComplete="name-middle" value={middleName} onChangeText={setMiddleName} />
+        <Input label="Last Name*" placeholder="Last Name" autoComplete="name-family" value={lastName} onChangeText={setLastName} />
+        <Input label="Email*" placeholder="Email" autoComplete="email" value={email} onChangeText={setEmail} />
+        <Input label="Password*" placeholder="Password" autoComplete="new-password" value={password} onChangeText={setPassword} secureTextEntry />
+        <Input label="Phone Number*" placeholder="Phone Number" value={phoneNumber} onChangeText={setPhoneNumber} />
 
         {errorMessage !== '' &&
           <Typography variant='body1' color={colors.error}>

@@ -1,10 +1,9 @@
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { authClient } from '@lib/authClient';
 import { AuthStackParamList } from '@navigation/AuthStack';
 import { Button, Input, Typography } from '@repo/components';
 import { colors } from '@repo/theme';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
@@ -51,8 +50,8 @@ export function SignInScreen() {
   } else {
     return (
       <View style={styles.container}>
-        <Input placeholder="Email" autoComplete="email" value={email} onChangeText={setEmail} />
-        <Input placeholder="Password" autoComplete="new-password" value={password} onChangeText={setPassword} secureTextEntry />
+        <Input label="Email" placeholder="Email" autoComplete="email" value={email} onChangeText={setEmail} />
+        <Input label="Password" placeholder="Password" autoComplete="new-password" value={password} onChangeText={setPassword} secureTextEntry />
 
         {errorMessage !== '' &&
           <Typography variant='body1' color={colors.error}>
