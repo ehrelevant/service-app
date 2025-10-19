@@ -63,9 +63,9 @@ export function SignInScreen() {
         <Button title="Sign In" onPress={handleSignIn} />
 
         <Pressable onPress={() => navigation.replace('SignUp')}>
-          <Text>
+          <Typography variant='subtitle1'>
             Don&apos;t have an account? <Text style={{ textDecorationLine: 'underline' }}>Sign Up</Text>
-          </Text>
+          </Typography>
         </Pressable>
       </View>
     );
