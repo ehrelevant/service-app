@@ -1,10 +1,9 @@
+import { authClient } from '@lib/authClient';
 import { Button } from '@repo/components';
+import type { HomeStackParamList } from '@navigation/HomeStack';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
-import { authClient } from '../authClient';
-import type { HomeStackParamList } from '../navigation/HomeStack';
 
 type HomeNavProp = NativeStackNavigationProp<HomeStackParamList, 'Home'>;
 

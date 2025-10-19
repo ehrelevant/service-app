@@ -1,6 +1,5 @@
+import { authClient } from '@lib/authClient';
 import { NavigationContainer } from '@react-navigation/native';
-
-import { authClient } from '../authClient';
 
 import { AuthStack } from './AuthStack';
 import { HomeStack } from './HomeStack';

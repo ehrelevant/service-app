@@ -1,19 +1,20 @@
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
-import { Button, Input } from '@repo/components';
+import { authClient } from '@lib/authClient';
+import { AuthStackParamList } from '@navigation/AuthStack';
+import { Button, Input, Typography } from '@repo/components';
 import { colors } from '@repo/theme';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 
-import { authClient } from '../authClient';
-import { AuthStackParamList } from '../navigation/AuthStack';
 
 type SignUpNavProp = NativeStackNavigationProp<AuthStackParamList, 'SignUp'>;
 
 export function SignUpScreen() {
   const navigation = useNavigation<SignUpNavProp>();
 
+  const [errorMessage, setErrorMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false);
 
   const [firstName, setFirstName] = useState('');
@@ -24,7 +25,11 @@ export function SignUpScreen() {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSignUp = async () => {
-    await authClient.signUp.email(
+    setIsLoading(true);
+    setErrorMessage('')
+
+    console.log('Requesting...');
+    const { data, error } = await authClient.signUp.email(
       {
         name: firstName,
         middleName,
@@ -33,27 +38,16 @@ export function SignUpScreen() {
         password,
         phoneNumber,
       },
-      {
-        async onRequest(ctx) {
-          console.log('Requesting...');
-          console.log(ctx);
-
-          setIsLoading(true);
-        },
-        async onSuccess(ctx) {
-          console.log('Success!');
-          console.log(ctx);
-
-          setIsLoading(false);
-        },
-        async onError(ctx) {
-          console.log('Error!');
-          console.log(ctx.error);
-
-          setIsLoading(false);
-        },
-      },
     );
+
+    if(data !== null) {
+      console.log(data);
+    } else if (error !== null) {
+      console.log(error);
+      setErrorMessage(error.message ?? '');
+    }
+
+    setIsLoading(false);
   };
 
   if (isLoading) {
@@ -73,6 +67,13 @@ export function SignUpScreen() {
         <Input placeholder="Email" value={email} onChangeText={setEmail} />
         <Input placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
         <Input placeholder="Phone Number" value={phoneNumber} onChangeText={setPhoneNumber} />
+
+        {errorMessage !== '' &&
+          <Typography variant='body1' color={colors.error}>
+            {errorMessage}
+          </Typography>
+        }
+
         <Button title="Sign Up" onPress={handleSignUp} />
 
         <Pressable onPress={() => navigation.replace('SignIn')}>
