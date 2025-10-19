@@ -8,4 +8,4 @@ export function RootNavigator() {
   const { data: session } = authClient.useSession();
 
   return <NavigationContainer>{session === null ? <AuthStack /> : <HomeStack />}</NavigationContainer>;
-};
+}

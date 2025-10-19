@@ -17,4 +17,4 @@ export function HomeStack() {
       <Stack.Screen name="Profile" component={ProfileScreen} />
     </Stack.Navigator>
   );
-};
+}

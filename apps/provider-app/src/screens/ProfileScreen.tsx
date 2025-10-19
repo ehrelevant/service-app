@@ -7,7 +7,7 @@ export function ProfileScreen() {
       <Text style={styles.description}>User Details</Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

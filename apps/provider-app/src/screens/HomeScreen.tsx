@@ -12,7 +12,7 @@ export function HomeScreen() {
 
   const handleSignOut = async () => {
     await authClient.signOut();
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -27,7 +27,7 @@ export function HomeScreen() {
       <Button title="Sign Out" onPress={handleSignOut} />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
