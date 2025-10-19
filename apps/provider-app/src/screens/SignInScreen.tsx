@@ -51,8 +51,8 @@ export function SignInScreen() {
   } else {
     return (
       <View style={styles.container}>
-        <Input placeholder="Email" value={email} onChangeText={setEmail} />
-        <Input placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
+        <Input placeholder="Email" autoComplete="email" value={email} onChangeText={setEmail} />
+        <Input placeholder="Password" autoComplete="new-password" value={password} onChangeText={setPassword} secureTextEntry />
 
         {errorMessage !== '' &&
           <Typography variant='body1' color={colors.error}>

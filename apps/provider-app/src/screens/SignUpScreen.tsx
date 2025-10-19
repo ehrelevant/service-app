@@ -61,11 +61,11 @@ export function SignUpScreen() {
   } else {
     return (
       <View style={styles.container}>
-        <Input placeholder="First Name" value={firstName} onChangeText={setFirstName} />
-        <Input placeholder="Middle Name" value={middleName} onChangeText={setMiddleName} />
-        <Input placeholder="Last Name" value={lastName} onChangeText={setLastName} />
-        <Input placeholder="Email" value={email} onChangeText={setEmail} />
-        <Input placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry />
+        <Input placeholder="First Name" autoComplete="name-given" value={firstName} onChangeText={setFirstName} />
+        <Input placeholder="Middle Name" autoComplete="name-middle" value={middleName} onChangeText={setMiddleName} />
+        <Input placeholder="Last Name" autoComplete="name-family" value={lastName} onChangeText={setLastName} />
+        <Input placeholder="Email" autoComplete="email" value={email} onChangeText={setEmail} />
+        <Input placeholder="Password" autoComplete="new-password" value={password} onChangeText={setPassword} secureTextEntry />
         <Input placeholder="Phone Number" value={phoneNumber} onChangeText={setPhoneNumber} />
 
         {errorMessage !== '' &&
