@@ -19,9 +19,9 @@ export function HomeScreen() {
       <Text style={styles.title}>Title</Text>
       <Text style={styles.subtitle}>Subtitle</Text>
       <Button
-        title="Profile"
+        title="Options"
         onPress={() => {
-          navigation.navigate('Profile');
+          navigation.navigate('Options');
         }}
       />
       <Button title="Sign Out" onPress={handleSignOut} />

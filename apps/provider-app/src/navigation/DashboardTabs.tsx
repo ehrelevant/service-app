@@ -2,13 +2,13 @@ import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/b
 import { colors, palette } from '@repo/theme';
 import { Home, Menu } from 'lucide-react-native';
 import { HomeScreen } from '@screens/HomeScreen';
-import { ProfileScreen } from '@screens/ProfileScreen';
+import { OptionsScreen } from '@screens/OptionsScreen';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Typography } from '@repo/components';
 
 export type DashboardTabsParamList = {
   Home: undefined;
-  Profile: undefined;
+  Options: undefined;
 };
 
 const Tab = createBottomTabNavigator<DashboardTabsParamList>();
@@ -84,7 +84,7 @@ export function DashboardTabs() {
   return (
     <Tab.Navigator tabBar={(props) => <TabBar {...props} />} initialRouteName="Home">
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Options" component={OptionsScreen} />
     </Tab.Navigator>
   );
 }

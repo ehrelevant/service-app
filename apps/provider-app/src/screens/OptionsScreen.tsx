@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export function ProfileScreen() {
+export function OptionsScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>User </Text>
