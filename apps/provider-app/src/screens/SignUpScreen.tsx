@@ -1,13 +1,13 @@
-import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, Text } from 'react-native';
 import { authClient } from '@lib/authClient';
 import { AuthStackParamList } from '@navigation/AuthStack';
 import { Button, Input, Typography } from '@repo/components';
 import { colors } from '@repo/theme';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-controller';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
-
 
 type SignUpNavProp = NativeStackNavigationProp<AuthStackParamList, 'SignUp'>;
 
@@ -52,15 +52,13 @@ export function SignUpScreen() {
 
   if (isLoading) {
     return (
-      <SafeAreaProvider>
-        <SafeAreaView style={styles.container}>
-          <ActivityIndicator size='large' color={colors.actionPrimary} />
-        </SafeAreaView>
-      </SafeAreaProvider>
+      <SafeAreaView style={styles.loadingContainer}>
+        <ActivityIndicator size='large' color={colors.actionPrimary} />
+      </SafeAreaView>
     )
   } else {
     return (
-      <View style={styles.container}>
+      <KeyboardAwareScrollView contentContainerStyle={styles.scrollContainer} bottomOffset={50}>
         <Input label="First Name*" placeholder="First Name" autoComplete="name-given" value={firstName} onChangeText={setFirstName} />
         <Input label="Middle Name" placeholder="Middle Name" autoComplete="name-middle" value={middleName} onChangeText={setMiddleName} />
         <Input label="Last Name*" placeholder="Last Name" autoComplete="name-family" value={lastName} onChangeText={setLastName} />
@@ -81,18 +79,23 @@ export function SignUpScreen() {
             Already have an account? <Text style={{ textDecorationLine: 'underline' }}>Sign In</Text>
           </Typography>
         </Pressable>
-      </View>
+      </KeyboardAwareScrollView>
     );
   }
 };
 
 const styles = StyleSheet.create({
-  container: {
+  loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
     gap: 10,
-    padding: 10,
   },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 10,
+    paddingHorizontal: 10,
+  }
 });
