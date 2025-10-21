@@ -1,13 +1,15 @@
 import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { colors, palette } from '@repo/theme';
-import { Home, Menu } from 'lucide-react-native';
-import { HomeScreen } from '@screens/HomeScreen';
-import { OptionsScreen } from '@screens/OptionsScreen';
+import { HardHat, Home, Menu } from 'lucide-react-native';
+import { HomeScreen } from '@screens/home/HomeScreen';
+import { OptionsScreen } from '@screens/options/OptionsScreen';
+import { ServiceListScreen } from '@screens/services/ServiceListScreen';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Typography } from '@repo/components';
 
 export type DashboardTabsParamList = {
   Home: undefined;
+  Services: undefined;
   Options: undefined;
 };
 
@@ -48,7 +50,9 @@ function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
 
           if (route.name === 'Home') {
             return <Home {...iconProps} />;
-          } else {
+          } else if (route.name === 'Services') {
+            return <HardHat {...iconProps} />;
+          } else  {
             return <Menu {...iconProps} />;
           }
         };
@@ -84,6 +88,7 @@ export function DashboardTabs() {
   return (
     <Tab.Navigator tabBar={(props) => <TabBar {...props} />} initialRouteName="Home">
       <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Services" component={ServiceListScreen} />
       <Tab.Screen name="Options" component={OptionsScreen} />
     </Tab.Navigator>
   );
