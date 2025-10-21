@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator<DashboardTabsParamList>();
 
 function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
   return (
-    <View style={styles.container}>
+    <View style={styles.tabsContainer}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label =
@@ -95,11 +95,13 @@ export function DashboardTabs() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  tabsContainer: {
     flexDirection: 'row',
     height: 64,
     paddingTop: 8,
     backgroundColor: colors.backgroundSecondary,
+    borderTopColor: colors.border,
+    borderWidth: 2
   },
   tabButton: {
     flex: 1,
