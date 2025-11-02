@@ -23,6 +23,7 @@ export const auth = betterAuth({
   user: {
     fields: {
       name: 'firstName',
+      image: 'avatarUrl',
     },
     additionalFields: {
       phoneNumber: {
