@@ -1,28 +1,32 @@
 import { Button } from '@repo/components';
 import { colors } from '@repo/theme';
-import { StyleSheet, View } from 'react-native';
-import { UserPen } from 'lucide-react-native';
+import { FileClock, UserPen } from 'lucide-react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
 
 export function OptionsScreen() {
   return (
-    <View style={styles.container}>
-      <Button title="Manage Profile" variant="text" leftIcon={
-        <UserPen size={24} color={colors.black} />
+    <SafeAreaView style={styles.container}>
+      <Button title="Manage Profile" variant="outline" style={styles.button} leftIcon={
+        <UserPen size={24} color={colors.actionPrimary} />
       }/>
-      <Button title="View Transaction History" variant="text" leftIcon={
-        <UserPen size={24} color={colors.black} />
+      <Button title="View Transaction History" variant="outline" style={styles.button} leftIcon={
+        <FileClock size={24} color={colors.actionPrimary} />
       }/>
       <Button title="Sign Out" variant="primary" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    paddingHorizontal: 10,
-    gap: 10,
-    alignItems: 'stretch',
+    flex: 1,
     justifyContent: 'center',
+    alignItems: 'stretch',
+    gap: 6,
+    paddingHorizontal: 10,
   },
+  button: {
+    gap: 10,
+  }
 });
