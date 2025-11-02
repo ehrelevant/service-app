@@ -129,6 +129,7 @@ export const review = app.table(
   {
     id: uuid('id').primaryKey().notNull().defaultRandom(),
     serviceId: uuid('service_id').notNull().references(() => service.id, { onUpdate: 'cascade', onDelete: 'cascade' }),
+    reviewerUserId: uuid('reviewer_user_id').notNull().references(() => user.id, { onUpdate: 'cascade', onDelete: 'cascade' }),
     rating: integer('rating'),
     comment: text('comment'),
     createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
