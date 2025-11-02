@@ -1,0 +1,1 @@
+ALTER TABLE "app"."user" RENAME COLUMN "image" TO "avatar_url";

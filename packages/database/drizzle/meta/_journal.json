@@ -64,6 +64,13 @@
       "when": 1760191861217,
       "tag": "0008_add_account_id_token",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1762074456143,
+      "tag": "0009_rename_image_to_avatar_url",
+      "breakpoints": true
     }
   ]
 }
