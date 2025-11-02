@@ -1,4 +1,4 @@
-import { boolean, check, integer, numeric, pgSchema, primaryKey, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { boolean, check, integer, numeric, pgEnum, pgSchema, primaryKey, text, timestamp, uuid } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
 
 import { geographyPointColumnType } from './custom/geography';
@@ -30,6 +30,21 @@ export const user = app.table(
 export type User = typeof user.$inferSelect;
 export type NewUser = typeof user.$inferInsert;
 
+export const roleEnum = pgEnum('role', ['provider', 'seeker', 'admin']);
+export const userRole = app.table(
+  'user_role',
+  {
+    userId: uuid('user_id')
+      .notNull()
+      .references(() => user.id, { onUpdate: 'cascade', onDelete: 'cascade' }),
+    role: roleEnum().notNull(),
+    assigned_at: timestamp('assigned_at', { withTimezone: true }).defaultNow(),
+  },
+  ({ userId, role }) => [primaryKey({ columns: [userId, role] })],
+);
+export type UserRole = typeof userRole.$inferSelect;
+export type NewUserRole = typeof userRole.$inferInsert;
+
 export const agency = app.table(
   'agency',
   {
@@ -41,29 +56,6 @@ export const agency = app.table(
 )
 export type Agency = typeof agency.$inferSelect;
 export type NewAgency = typeof agency.$inferInsert;
-
-export const role = app.table('role', {
-  id: uuid('id').primaryKey().notNull().defaultRandom(),
-  name: text('name').notNull().unique(),
-});
-export type Role = typeof role.$inferSelect;
-export type NewRole = typeof role.$inferInsert;
-
-export const userRole = app.table(
-  'user_role',
-  {
-    userId: uuid('user_id')
-      .notNull()
-      .references(() => user.id, { onUpdate: 'cascade', onDelete: 'cascade' }),
-    roleId: uuid('role_id')
-      .notNull()
-      .references(() => role.id, { onUpdate: 'cascade', onDelete: 'cascade' }),
-    assigned_at: timestamp('assigned_at', { withTimezone: true }).defaultNow(),
-  },
-  ({ userId, roleId }) => [primaryKey({ columns: [userId, roleId] })],
-);
-export type UserRole = typeof userRole.$inferSelect;
-export type NewUserRole = typeof userRole.$inferInsert;
 
 export const provider = app.table(
   'provider',
