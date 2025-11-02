@@ -71,6 +71,13 @@
       "when": 1762074456143,
       "tag": "0009_rename_image_to_avatar_url",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1762082540811,
+      "tag": "0010_add_other_initial_tables",
+      "breakpoints": true
     }
   ]
 }
