@@ -1,6 +1,7 @@
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { NestFactory } from '@nestjs/core';
+import { ValidationPipe } from '@nestjs/common';
 
 import { AppModule } from './app.module';
 
@@ -11,6 +12,8 @@ async function bootstrap() {
 
   // TODO: Add CORS policy for production mode
   app.enableCors();
+
+  app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder().build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
