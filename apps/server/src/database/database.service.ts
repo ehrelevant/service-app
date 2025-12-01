@@ -11,8 +11,13 @@ export class DatabaseService {
   schema: typeof schema = schema;
 
   constructor() {
-    const connectionString = process.env.DATABASE_URL as string;
-    const pool = new Pool({ connectionString });
+    const connectionString = process.env.DATABASE_URL!;
+    const pool = new Pool({
+      connectionString,
+      max: 10,
+      idleTimeoutMillis: 20000,
+      connectionTimeoutMillis: 10000,
+    });
     this.db = drizzle(pool, { schema, casing: 'snake_case' });
   }
 }
